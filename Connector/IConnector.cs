@@ -10,7 +10,7 @@ namespace Connector
     {
         object Connect(object parameters=null);
         object Disconnect(object parameters=null);
-        object GetData(object parameters);
+        object GetData(object parameters=null);
         object GetValue(object parameters);
     }
 }

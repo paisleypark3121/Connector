@@ -60,16 +60,16 @@ namespace Connector
             }
         }
 
-        public object GetData(object parameters)
+        public object GetData(object parameters=null)
         {
             try
             {
-                int numPackets = 1;
+                int numPackets = -1;
                 if (parameters != null)
                     numPackets = (int)parameters;
 
                 int errCode = NativeThinkgear.TG_ReadPackets(connectionID, numPackets);
-                if (errCode < 0)
+                if (errCode <= 0)
                     throw new Exception("Error in reading packets: " + errCode);
 
                 return true;
